@@ -492,6 +492,7 @@ where
         };
 
         let json = self.post_token(body).await?;
+        println!("{:?}", json);
         let token: Bearer = serde_json::from_value(json)?;
         Ok(token)
     }
